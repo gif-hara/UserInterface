@@ -1,0 +1,12 @@
+using UnityEngine;
+using UnityEngine.Assertions;
+
+namespace HK.UserInterface
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+    }
+}
