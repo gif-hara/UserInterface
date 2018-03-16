@@ -6,7 +6,7 @@ namespace HK.UserInterface
     /// <summary>
     /// 
     /// </summary>
-    public class #SCRIPTNAME# : MonoBehaviour
+    public sealed class #SCRIPTNAME# : MonoBehaviour
     {
     }
 }
