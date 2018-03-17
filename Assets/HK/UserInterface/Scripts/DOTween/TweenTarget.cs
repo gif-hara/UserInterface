@@ -25,7 +25,6 @@ namespace HK.UserInterface.Animations
             
             Assert.IsNotNull(this.graphic);
             this.defaultColor = this.graphic.color;
-            Debug.Log(this.defaultColor);
         }
         
         #if UNITY_EDITOR
