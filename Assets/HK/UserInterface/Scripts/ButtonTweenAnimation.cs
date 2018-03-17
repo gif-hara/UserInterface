@@ -18,12 +18,16 @@ namespace HK.UserInterface
         IPointerExitHandler
     {
         [SerializeField]
+        private GameObject target;
+        
+        [SerializeField]
         private SequenceObject pointerDown;
 
         [SerializeField]
         private SequenceObject pointerUp;
 
-        private GameObject cachedGameObject;
+        [SerializeField]
+        private bool onPointerTakeOffTween;
 
         private Sequence currentSequence;
 
@@ -33,36 +37,47 @@ namespace HK.UserInterface
         {
             Assert.IsNotNull(this.pointerDown);
             Assert.IsNotNull(this.pointerUp);
-            this.cachedGameObject = this.gameObject;
         }
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            this.InvokeSequence(this.pointerDown.Invoke(this.cachedGameObject));
+            this.InvokeSequence(this.pointerDown.Invoke(this.target));
             this.pressed = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             this.pressed = false;
+            if (!this.onPointerTakeOffTween)
+            {
+                this.InvokeSequence(this.pointerUp.Invoke(this.target));
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            this.InvokeSequence(this.pointerUp.Invoke(this.cachedGameObject));
+            this.InvokeSequence(this.pointerUp.Invoke(this.target));
         }
         
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!this.onPointerTakeOffTween)
+            {
+                return;
+            }
             if (this.pressed)
             {
-                this.InvokeSequence(this.pointerDown.Invoke(this.cachedGameObject));
+                this.InvokeSequence(this.pointerDown.Invoke(this.target));
             }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            this.InvokeSequence(this.pointerUp.Invoke(this.cachedGameObject));
+            if (!this.onPointerTakeOffTween)
+            {
+                return;
+            }
+            this.InvokeSequence(this.pointerUp.Invoke(this.target));
         }
 
         private void InvokeSequence(Sequence sequence)
