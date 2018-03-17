@@ -8,8 +8,12 @@ namespace HK.UserInterface.SceneManagements
     /// <summary>
     /// シーンのルートを制御するクラス
     /// </summary>
-    public sealed class SceneRoot : MonoBehaviour
+    public sealed class SceneRoot : PanelController
     {
+        private static SceneRoot instance;
+        
+        public static SceneRoot Instance { get { return instance; } }
+        
         [SerializeField]
         private Transform panelParent;
         
@@ -19,14 +23,47 @@ namespace HK.UserInterface.SceneManagements
         [SerializeField]
         private float startDelay;
 
+        private PanelController root;
+
+        void Awake()
+        {
+            instance = this;
+        }
+
         void Start()
         {
             Observable.Timer(TimeSpan.FromSeconds(this.startDelay))
                 .SubscribeWithState(this, (_, _this) =>
                 {
-                    _this.CreatePanel(_this.initialPanel).OnPanelIn();
+                    _this.OnPanelIn();
                 })
                 .AddTo(this);
+        }
+
+        void OnDestroy()
+        {
+            instance = null;
+        }
+
+        public void Change(PanelController prefab)
+        {
+            if (this.root != null)
+            {
+                this.root.OnPanelOut()
+                    .Take(1)
+                    .SubscribeWithState2(this, prefab, (_, _this, p) =>
+                    {
+                        Destroy(_this.root.gameObject);
+                        _this.root = _this.CreatePanel(p);
+                        _this.root.OnPanelIn();
+                    })
+                    .AddTo(this);
+            }
+            else
+            {
+                this.root = this.CreatePanel(prefab);
+                this.root.OnPanelIn();
+            }
         }
 
         private PanelController CreatePanel(PanelController prefab)
@@ -34,6 +71,17 @@ namespace HK.UserInterface.SceneManagements
             var panel = Instantiate(prefab);
             panel.transform.SetParent(this.panelParent, false);
             return panel;
+        }
+
+        public override UniRx.IObservable<Unit> OnPanelIn()
+        {
+            this.root = this.CreatePanel(this.initialPanel);
+            return this.root.OnPanelIn();
+        }
+
+        public override UniRx.IObservable<Unit> OnPanelOut()
+        {
+            throw new NotImplementedException();
         }
     }
 }
