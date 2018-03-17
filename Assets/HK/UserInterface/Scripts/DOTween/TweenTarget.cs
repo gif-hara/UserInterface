@@ -14,7 +14,21 @@ namespace HK.UserInterface.Animations
 
         private Color defaultColor;
 
-        public Graphic Graphic { get { return graphic; } set { graphic = value; } }
+        public Graphic Graphic
+        {
+            get
+            {
+                return this.graphic;
+            }
+            set
+            {
+                this.graphic = value;
+                Assert.IsNotNull(this.graphic);
+                this.defaultColor = this.graphic.color;
+            }
+        }
+
+        public Color DefaultColor { get { return defaultColor; } }
 
         void Awake()
         {
