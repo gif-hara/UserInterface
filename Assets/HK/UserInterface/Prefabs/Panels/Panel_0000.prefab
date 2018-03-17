@@ -255,7 +255,7 @@ MonoBehaviour:
         graphic: {fileID: 114723222284369166}
       inSequence: {fileID: 11400000, guid: 02106426639a345658b37807f0263d7d, type: 2}
       outSequence: {fileID: 11400000, guid: 3b83f32ac63c3440489e54c29c473fa8, type: 2}
-    tweenInterval: 0.1
+    tweenInterval: 1
 --- !u!114 &114403201977537812
 MonoBehaviour:
   m_ObjectHideFlags: 1
