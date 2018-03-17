@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65be3c7d3efd647d48d4b5ba7af34c3f, type: 3}
-  m_Name: Scale_0.1_OutSine_(2.0, 0.5, 0.3)
+  m_Script: {fileID: 11500000, guid: b85175d9dcecb4845b36823a356a1777, type: 3}
+  m_Name: ColorTo_0.1_Linear_RGBA(1.000, 0.000, 0.000, 1.000)
   m_EditorClassIdentifier: 
   duration: 0.1
-  ease: 3
-  to: {x: 2, y: 0.5, z: 0.3}
+  ease: 1
+  to: {r: 1, g: 0, b: 0, a: 1}
