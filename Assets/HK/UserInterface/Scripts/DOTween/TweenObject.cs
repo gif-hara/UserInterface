@@ -30,7 +30,7 @@ namespace HK.UserInterface.Animations
         /// アセットの名前を返す
         /// </summary>
         /// <remarks>
-        /// <c>duration</c>_<c>ease</c>_xxx
+        /// <c>typename</c>_<c>duration</c>_<c>ease</c>_xxx
         /// </remarks>
         protected virtual string AssetName
         {
