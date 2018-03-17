@@ -43,6 +43,7 @@ namespace HK.UserInterface
 
         void Awake()
         {
+            Assert.IsNotNull(this.target);
             Assert.IsNotNull(this.pointerDown);
             Assert.IsNotNull(this.pointerUp);
         }
