@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DG.Tweening;
 using HK.UserInterface.Animations;
 using UniRx;
@@ -37,7 +38,7 @@ namespace HK.UserInterface.SceneManagements
         public class ElementBundle
         {
             [SerializeField]
-            private Element[] elements;
+            private Elements[] elements;
 
             [SerializeField]
             private float tweenInterval;
@@ -57,7 +58,6 @@ namespace HK.UserInterface.SceneManagements
                 {
                     observers[i] = this.elements[i].InvokeIn(owner, this.tweenInterval * i);
                 }
-
                 return Observable.Zip(observers).AsUnitObservable();
             }
             
@@ -68,8 +68,32 @@ namespace HK.UserInterface.SceneManagements
                 {
                     observers[i] = this.elements[i].InvokeOut(owner, this.tweenInterval * i);
                 }
-
                 return Observable.Zip(observers).AsUnitObservable();
+            }
+        }
+
+        [Serializable]
+        public class Elements
+        {
+            [SerializeField]
+            private Element[] elements;
+
+            public void Setup()
+            {
+                foreach (var element in this.elements)
+                {
+                    element.Setup();
+                }
+            }
+            
+            public UniRx.IObservable<Unit> InvokeIn(GameObject owner, float delay)
+            {
+                return Observable.Zip(this.elements.Select(e => e.InvokeIn(owner, delay))).AsUnitObservable();
+            }
+            
+            public UniRx.IObservable<Unit> InvokeOut(GameObject owner, float delay)
+            {
+                return Observable.Zip(this.elements.Select(e => e.InvokeOut(owner, delay))).AsUnitObservable();
             }
         }
         [Serializable]
