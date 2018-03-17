@@ -14,7 +14,7 @@ MonoBehaviour:
   elements:
   - tween: {fileID: 11400000, guid: bc3f3fe960c224dd89f313ded6f73980, type: 2}
     type: 0
-  - tween: {fileID: 11400000, guid: b4b9fc301378e4101b6b74a49d405387, type: 2}
+  - tween: {fileID: 11400000, guid: 4717248757a9b4587a61a24551f11d69, type: 2}
     type: 1
   - tween: {fileID: 11400000, guid: 43c8f820bf9d344e1a4b5c3f362e2e7a, type: 2}
     type: 0
