@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 222534147749999060}
   - component: {fileID: 114395180259205232}
   m_Layer: 5
-  m_Name: Panel_0000
+  m_Name: Panel_0001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6156863, b: 0.6156863, a: 1}
+  m_Color: {r: 0.6156863, g: 0.6342393, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 114395180259205232}
   selectable: {fileID: 114055945695884130}
-  panelController: {fileID: 114395180259205232, guid: 1cc1a7d01391c47c6816a59dbb8326c6,
+  panelController: {fileID: 114395180259205232, guid: 16a1ea170a47b47bfb4076524bf4f03a,
     type: 2}
 --- !u!114 &114466907489438542
 MonoBehaviour:
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6156863, b: 0.6156863, a: 1}
+  m_Color: {r: 0.6156863, g: 0.6342393, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6156863, b: 0.6156863, a: 1}
+  m_Color: {r: 0.6156863, g: 0.6342393, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
