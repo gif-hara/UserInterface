@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47df84080f18b43f69694b083164b2ba, type: 3}
-  m_Name: ScaleFromTo_0.5_InOutBack_(1.0, 1.0, 1.0)_(0.0, 0.0, 0.0)
+  m_Name: ScaleFromTo_0.5_InBack_(1.0, 1.0, 1.0)_(0.0, 0.0, 0.0)
   m_EditorClassIdentifier: 
   duration: 0.5
-  ease: 28
+  ease: 26
   from: {x: 1, y: 1, z: 1}
   to: {x: 0, y: 0, z: 0}
