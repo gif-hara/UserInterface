@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using HK.UserInterface.Animations;
 using UniRx;
 using UnityEngine;
@@ -90,24 +91,25 @@ namespace HK.UserInterface.SceneManagements
 
             public UniRx.IObservable<Unit> InvokeIn(GameObject owner, float delay)
             {
-                return this.CreateTimer(this.inSequence, owner, delay).AsUnitObservable();
+                return this.CreateTimer(this.inSequence, owner, delay);
             }
 
             public UniRx.IObservable<Unit> InvokeOut(GameObject owner, float delay)
             {
-                return this.CreateTimer(this.outSequence, owner, delay).AsUnitObservable();
+                return this.CreateTimer(this.outSequence, owner, delay);
             }
 
-            private UniRx.IObservable<long> CreateTimer(SequenceObject sequence, GameObject owner, float delay)
+            private UniRx.IObservable<Unit> CreateTimer(SequenceObject sequenceObject, GameObject owner, float delay)
             {
+                var sequence = sequenceObject.Invoke(this.target).Pause();
                 var observer = Observable.Timer(TimeSpan.FromSeconds(delay)).Share();
                 observer.SubscribeWithState2(this, sequence, (_, _this, s) =>
                     {
-                        s.Invoke(_this.target);
+                        s.Play();
                     })
                     .AddTo(owner);
 
-                return observer;
+                return sequence.OnCompleteAsObservable();
             }
         }
     }
