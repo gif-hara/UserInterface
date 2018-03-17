@@ -6,7 +6,7 @@ namespace HK.UserInterface.Animations
     /// <summary>
     /// スケールアニメーションを行う
     /// </summary>
-    [CreateAssetMenu(menuName = "HK/UserInterface/Animations/Tween/Scale")]
+    [CreateAssetMenu(menuName = "HK/UserInterface/Animations/Tween/ScaleTo")]
     public sealed class ScaleTo : TweenObject
     {
         [SerializeField]
