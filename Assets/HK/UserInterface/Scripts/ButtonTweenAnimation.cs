@@ -33,6 +33,14 @@ namespace HK.UserInterface
 
         private bool pressed;
 
+        public GameObject Target { get { return target; } set { target = value; } }
+
+        public SequenceObject PointerDown { get { return pointerDown; } set { pointerDown = value; } }
+
+        public SequenceObject PointerUp { get { return pointerUp; } set { pointerUp = value; } }
+
+        public bool OnPointerTakeOffTween { get { return onPointerTakeOffTween; } set { onPointerTakeOffTween = value; } }
+
         void Awake()
         {
             Assert.IsNotNull(this.pointerDown);
