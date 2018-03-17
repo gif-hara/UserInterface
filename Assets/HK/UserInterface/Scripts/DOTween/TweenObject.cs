@@ -18,7 +18,7 @@ namespace HK.UserInterface.Animations
         [SerializeField]
         protected Ease ease;
         
-        public abstract Tween Tween(GameObject gameObject);
+        public abstract Tween Tween(TweenTarget target);
 
         #if UNITY_EDITOR
         private void OnValidate()

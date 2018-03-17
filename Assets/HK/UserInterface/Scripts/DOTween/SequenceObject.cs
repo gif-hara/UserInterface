@@ -14,12 +14,12 @@ namespace HK.UserInterface.Animations
         [SerializeField]
         private Element[] elements;
 
-        public Sequence Invoke(GameObject gameObject)
+        public Sequence Invoke(TweenTarget target)
         {
             var result = DOTween.Sequence();
             foreach (var element in this.elements)
             {
-                element.Attach(result, gameObject);
+                element.Attach(result, target);
             }
             return result;
         }
@@ -39,14 +39,14 @@ namespace HK.UserInterface.Animations
             [SerializeField]
             private SequenceType type;
 
-            public Sequence Attach(Sequence sequence, GameObject gameObject)
+            public Sequence Attach(Sequence sequence, TweenTarget target)
             {
                 switch (this.type)
                 {
                     case SequenceType.Append:
-                        return sequence.Append(this.tween.Tween(gameObject));
+                        return sequence.Append(this.tween.Tween(target));
                     case SequenceType.Join:
-                        return sequence.Join(this.tween.Tween(gameObject));
+                        return sequence.Join(this.tween.Tween(target));
                     default:
                         Assert.IsTrue(false, string.Format("未対応の値です {0}", this.type));
                         return null;

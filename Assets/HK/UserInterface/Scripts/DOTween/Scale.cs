@@ -12,9 +12,9 @@ namespace HK.UserInterface.Animations
         [SerializeField]
         private Vector3 to;
         
-        public override Tween Tween(GameObject gameObject)
+        public override Tween Tween(TweenTarget target)
         {
-            return gameObject.transform.DOScale(this.to, this.duration).SetEase(this.ease);
+            return target.Graphic.transform.DOScale(this.to, this.duration).SetEase(this.ease);
         }
 
         #if UNITY_EDITOR

@@ -10,28 +10,28 @@ namespace HK.UserInterface.Animations
     public sealed class TweenTarget : MonoBehaviour
     {
         [SerializeField]
-        private Graphic target;
+        private Graphic graphic;
 
         private Color defaultColor;
 
-        public Graphic Target { get { return target; } set { target = value; } }
+        public Graphic Graphic { get { return graphic; } set { graphic = value; } }
 
         void Awake()
         {
-            if (this.target == null)
+            if (this.graphic == null)
             {
-                this.target = this.GetComponent<Graphic>();
+                this.graphic = this.GetComponent<Graphic>();
             }
             
-            Assert.IsNotNull(this.target);
-            this.defaultColor = this.target.color;
+            Assert.IsNotNull(this.graphic);
+            this.defaultColor = this.graphic.color;
             Debug.Log(this.defaultColor);
         }
         
         #if UNITY_EDITOR
         void Reset()
         {
-            this.target = this.GetComponent<Graphic>();
+            this.graphic = this.GetComponent<Graphic>();
         }
         #endif
     }
