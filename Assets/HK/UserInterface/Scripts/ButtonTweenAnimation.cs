@@ -13,7 +13,6 @@ namespace HK.UserInterface
         MonoBehaviour,
         IPointerDownHandler,
         IPointerUpHandler,
-        IPointerClickHandler,
         IPointerEnterHandler,
         IPointerExitHandler
     {
@@ -56,18 +55,10 @@ namespace HK.UserInterface
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            this.InvokeSequence(this.pointerUp.Invoke(this.target));
             this.pressed = false;
-            if (!this.onPointerTakeOffTween)
-            {
-                this.InvokeSequence(this.pointerUp.Invoke(this.target));
-            }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            this.InvokeSequence(this.pointerUp.Invoke(this.target));
-        }
-        
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (!this.onPointerTakeOffTween)
