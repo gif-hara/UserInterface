@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
@@ -7,7 +8,8 @@ namespace HK.UserInterface.Animations
     /// <summary>
     /// アニメーションするオブジェクトを制御するクラス
     /// </summary>
-    public sealed class TweenTarget : MonoBehaviour
+    [Serializable]
+    public sealed class TweenTarget
     {
         [SerializeField]
         private Graphic graphic;
@@ -30,22 +32,10 @@ namespace HK.UserInterface.Animations
 
         public Color DefaultColor { get { return defaultColor; } }
 
-        void Awake()
+        public void Setup()
         {
-            if (this.graphic == null)
-            {
-                this.graphic = this.GetComponent<Graphic>();
-            }
-            
             Assert.IsNotNull(this.graphic);
             this.defaultColor = this.graphic.color;
         }
-        
-        #if UNITY_EDITOR
-        void Reset()
-        {
-            this.graphic = this.GetComponent<Graphic>();
-        }
-        #endif
     }
 }

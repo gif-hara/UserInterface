@@ -9,7 +9,6 @@ namespace HK.UserInterface
     /// <summary>
     /// ボタンのアニメーションを<see cref="DOTween"/>で行うクラス
     /// </summary>
-    [RequireComponent(typeof(TweenTarget))]
     public class ButtonTweenAnimation :
         MonoBehaviour,
         IPointerDownHandler,
@@ -17,6 +16,9 @@ namespace HK.UserInterface
         IPointerEnterHandler,
         IPointerExitHandler
     {
+        [SerializeField]
+        private TweenTarget target;
+        
         [SerializeField]
         private SequenceObject pointerDown;
 
@@ -26,8 +28,6 @@ namespace HK.UserInterface
         [SerializeField]
         private bool onPointerTakeOffTween;
 
-        private TweenTarget target;
-        
         private Sequence currentSequence;
 
         private bool pressed;
@@ -43,8 +43,7 @@ namespace HK.UserInterface
             Assert.IsNotNull(this.pointerDown);
             Assert.IsNotNull(this.pointerUp);
 
-            this.target = this.GetComponent<TweenTarget>();
-            Assert.IsNotNull(this.target);
+            this.target.Setup();
         }
         
         public void OnPointerDown(PointerEventData eventData)
