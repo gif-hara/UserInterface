@@ -1,6 +1,5 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace HK.UserInterface.Animations
 {
@@ -19,7 +18,7 @@ namespace HK.UserInterface.Animations
         }
 
         #if UNITY_EDITOR
-        protected override string AssetName { get { return string.Format("ColorTo_{0}_{1}", base.AssetName, this.to); } }
+        protected override string AssetName { get { return string.Format("{0}_{1}", base.AssetName, this.to); } }
         #endif
     }
 }

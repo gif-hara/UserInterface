@@ -7,7 +7,7 @@ namespace HK.UserInterface.Animations
     /// スケールアニメーションを行う
     /// </summary>
     [CreateAssetMenu(menuName = "HK/UserInterface/Animations/Tween/Scale")]
-    public sealed class Scale : TweenObject
+    public sealed class ScaleTo : TweenObject
     {
         [SerializeField]
         private Vector3 to;
@@ -18,7 +18,7 @@ namespace HK.UserInterface.Animations
         }
 
         #if UNITY_EDITOR
-        protected override string AssetName { get { return string.Format("Scale_{0}_{1}", base.AssetName, this.to); } }
+        protected override string AssetName { get { return string.Format("{0}_{1}", base.AssetName, this.to); } }
         #endif
     }
 }

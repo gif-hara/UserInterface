@@ -1,5 +1,4 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -34,7 +33,7 @@ namespace HK.UserInterface.Animations
         /// </remarks>
         protected virtual string AssetName
         {
-            get { return string.Format("{0}_{1}", this.duration, this.ease); }
+            get { return string.Format("{0}_{1}_{2}", this.GetType().Name, this.duration, this.ease); }
         }
         #endif
     }
