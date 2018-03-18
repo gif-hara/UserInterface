@@ -22,6 +22,7 @@ namespace HK.UserInterface.PanelElements
         {
             base.Awake();
             this.selectable.OnPointerClickAsObservable()
+                .Where(_ => this.selectable.interactable)
                 .SubscribeWithState(this, (_, _this) =>
                 {
                     SceneRoot.Instance.Change(_this.panelController);

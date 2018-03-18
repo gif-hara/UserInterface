@@ -73,13 +73,13 @@ namespace HK.UserInterface.SceneManagements
             return panel;
         }
 
-        public override UniRx.IObservable<Unit> OnPanelIn()
+        protected override UniRx.IObservable<Unit> InternalOnPanelIn()
         {
             this.root = this.CreatePanel(this.initialPanel);
             return this.root.OnPanelIn();
         }
 
-        public override UniRx.IObservable<Unit> OnPanelOut()
+        protected override UniRx.IObservable<Unit> InternalOnPanelOut()
         {
             throw new NotImplementedException();
         }

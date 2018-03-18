@@ -3,6 +3,7 @@ using HK.UserInterface.Animations;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace HK.UserInterface
 {
@@ -16,6 +17,9 @@ namespace HK.UserInterface
         IPointerEnterHandler,
         IPointerExitHandler
     {
+        [SerializeField]
+        private Selectable selectable;
+        
         [SerializeField]
         private TweenTarget target;
         
@@ -45,21 +49,38 @@ namespace HK.UserInterface
 
             this.target.Setup();
         }
+
+        void OnValidate()
+        {
+            this.selectable = this.GetComponent<Selectable>();
+        }
         
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (!this.selectable.interactable)
+            {
+                return;
+            }
             this.InvokeSequence(this.pointerDown.Invoke(this.target));
             this.pressed = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (!this.selectable.interactable)
+            {
+                return;
+            }
             this.InvokeSequence(this.pointerUp.Invoke(this.target));
             this.pressed = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!this.selectable.interactable)
+            {
+                return;
+            }
             if (!this.onPointerTakeOffTween)
             {
                 return;
@@ -72,6 +93,10 @@ namespace HK.UserInterface
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (!this.selectable.interactable)
+            {
+                return;
+            }
             if (!this.onPointerTakeOffTween)
             {
                 return;

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
-using HK.UserInterface.SceneManagements;
+using HK.Framework.EventSystems;
+using HK.UserInterface.Events.SceneManagements;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 namespace HK.UserInterface.SceneManagements
@@ -28,9 +30,20 @@ namespace HK.UserInterface.SceneManagements
                 this.parent.children.Add(this);
             }
         }
-        
-        public abstract IObservable<Unit> OnPanelIn();
 
-        public abstract IObservable<Unit> OnPanelOut();
+        public IObservable<Unit> OnPanelIn()
+        {
+            return this.InternalOnPanelIn();
+        }
+
+        public IObservable<Unit> OnPanelOut()
+        {
+            UniRxEvent.GlobalBroker.Publish(ClosePanel.Get(this));
+            return this.InternalOnPanelOut();
+        }
+
+        protected abstract IObservable<Unit> InternalOnPanelIn();
+        
+        protected abstract IObservable<Unit> InternalOnPanelOut();
     }
 }

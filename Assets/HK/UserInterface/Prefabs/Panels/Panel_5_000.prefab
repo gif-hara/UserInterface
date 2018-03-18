@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114343903371565894}
   - component: {fileID: 114599160912708086}
   - component: {fileID: 114403201977537812}
+  - component: {fileID: 114382543581784204}
   m_Layer: 5
   m_Name: Button (0)
   m_TagString: Untagged
@@ -128,11 +129,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5128c9e4134944db89bc1e7960f801cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectable: {fileID: 114055945695884130}
   target:
     graphic: {fileID: 114046892861636802}
   pointerDown: {fileID: 11400000, guid: 0e810f57c576a4b5a9103552d9a7c407, type: 2}
   pointerUp: {fileID: 11400000, guid: ebf084a350db344f1a6a3eac74442bbf, type: 2}
   onPointerTakeOffTween: 0
+--- !u!114 &114382543581784204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995058094596388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417384ab7601c447da2d7853dc32c506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 114395180259205232}
+  selectable: {fileID: 114055945695884130}
 --- !u!114 &114395180259205232
 MonoBehaviour:
   m_ObjectHideFlags: 1

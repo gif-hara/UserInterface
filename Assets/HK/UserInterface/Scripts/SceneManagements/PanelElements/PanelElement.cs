@@ -18,7 +18,7 @@ namespace HK.UserInterface.PanelElements
         }
 
         #if UNITY_EDITOR
-        void Reset()
+        protected virtual void Reset()
         {
             this.owner = this.GetComponentInParent<PanelController>();
             if (this.owner == null)

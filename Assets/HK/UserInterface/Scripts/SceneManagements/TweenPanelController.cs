@@ -24,12 +24,12 @@ namespace HK.UserInterface.SceneManagements
             this.elementBundle.Setup();
         }
         
-        public override UniRx.IObservable<Unit> OnPanelIn()
+        protected override UniRx.IObservable<Unit> InternalOnPanelIn()
         {
             return this.elementBundle.InvokeIn(this.gameObject);
         }
 
-        public override UniRx.IObservable<Unit> OnPanelOut()
+        protected override UniRx.IObservable<Unit> InternalOnPanelOut()
         {
             return this.elementBundle.InvokeOut(this.gameObject);
         }
