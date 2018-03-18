@@ -1,4 +1,5 @@
-﻿using HK.Framework.EventSystems;
+﻿using DG.Tweening;
+using HK.Framework.EventSystems;
 using HK.UserInterface.Enums;
 using HK.UserInterface.Events.GameSystems;
 using UniRx;
@@ -15,8 +16,17 @@ namespace HK.UserInterface.GameSystems
         [SerializeField]
         private Camera controlledCamera;
 
+        [SerializeField]
+        private float duration;
+
+        [SerializeField]
+        private Ease ease;
+
+        private Tweener changeColor;
+
         void Awake()
         {
+            Assert.IsNotNull(this.controlledCamera);
             UniRxEvent.GlobalBroker.Receive<ChangeBackgroundColor>()
                 .SubscribeWithState(this, (x, _this) => _this.Change(x.ColorType))
                 .AddTo(this);
@@ -24,7 +34,12 @@ namespace HK.UserInterface.GameSystems
 
         private void Change(ColorType colorType)
         {
-            this.controlledCamera.backgroundColor = colorType.ToColor();
+            if (this.changeColor != null)
+            {
+                this.changeColor.Kill();
+            }
+            
+            this.changeColor = this.controlledCamera.DOColor(colorType.ToColor(), this.duration).SetEase(this.ease);
         }
     }
 }

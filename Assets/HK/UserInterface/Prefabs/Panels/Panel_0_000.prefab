@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114183346383777062}
   - component: {fileID: 114470418068928448}
   - component: {fileID: 114809340742938006}
+  - component: {fileID: 114569391000689702}
   - component: {fileID: 114381645054231718}
   - component: {fileID: 114435556895462032}
   m_Layer: 5
@@ -780,6 +781,20 @@ MonoBehaviour:
   pointerDown: {fileID: 11400000, guid: 0e810f57c576a4b5a9103552d9a7c407, type: 2}
   pointerUp: {fileID: 11400000, guid: ebf084a350db344f1a6a3eac74442bbf, type: 2}
   onPointerTakeOffTween: 0
+--- !u!114 &114569391000689702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064225645371304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b844137d8da524cab829f5e7fa4a9551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 114395180259205232}
+  selectable: {fileID: 114183346383777062}
+  colorType: 6
 --- !u!114 &114599160912708086
 MonoBehaviour:
   m_ObjectHideFlags: 1
