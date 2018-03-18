@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 114055945695884130}
   - component: {fileID: 114343903371565894}
   - component: {fileID: 114599160912708086}
+  - component: {fileID: 114499533581300402}
   - component: {fileID: 114403201977537812}
   - component: {fileID: 114707610264621944}
   m_Layer: 5
@@ -733,6 +734,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114499533581300402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995058094596388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b844137d8da524cab829f5e7fa4a9551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 114395180259205232}
+  selectable: {fileID: 114055945695884130}
+  colorType: 10
 --- !u!114 &114529813066273210
 MonoBehaviour:
   m_ObjectHideFlags: 1
