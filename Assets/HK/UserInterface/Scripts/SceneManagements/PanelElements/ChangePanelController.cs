@@ -10,6 +10,7 @@ namespace HK.UserInterface.PanelElements
     /// <summary>
     /// <see cref="PanelController"/>を切り替えるクラス
     /// </summary>
+    [RequireComponent(typeof(SelectableDisabler))]
     public sealed class ChangePanelController : PanelElement
     {
         [SerializeField]
