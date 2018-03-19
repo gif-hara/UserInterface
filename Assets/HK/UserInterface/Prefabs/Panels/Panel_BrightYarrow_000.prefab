@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 224613055072751084}
   - component: {fileID: 222534147749999060}
   - component: {fileID: 114395180259205232}
+  - component: {fileID: 114396859758733908}
   m_Layer: 5
-  m_Name: Panel_5_000
+  m_Name: Panel_BrightYarrow_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +43,7 @@ GameObject:
   - component: {fileID: 114343903371565894}
   - component: {fileID: 114599160912708086}
   - component: {fileID: 114403201977537812}
-  - component: {fileID: 114382543581784204}
+  - component: {fileID: 114220948735663752}
   m_Layer: 5
   m_Name: Button (0)
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69803923, g: 0.74509805, b: 0.76470596, a: 1}
+  m_Color: {r: 0.9921569, g: 0.7960785, b: 0.43137258, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -118,6 +119,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114220948735663752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995058094596388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417384ab7601c447da2d7853dc32c506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 114395180259205232}
+  selectable: {fileID: 114055945695884130}
 --- !u!114 &114343903371565894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,19 +149,6 @@ MonoBehaviour:
   pointerDown: {fileID: 11400000, guid: 0e810f57c576a4b5a9103552d9a7c407, type: 2}
   pointerUp: {fileID: 11400000, guid: ebf084a350db344f1a6a3eac74442bbf, type: 2}
   onPointerTakeOffTween: 0
---- !u!114 &114382543581784204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1995058094596388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 417384ab7601c447da2d7853dc32c506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 114395180259205232}
-  selectable: {fileID: 114055945695884130}
 --- !u!114 &114395180259205232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +168,18 @@ MonoBehaviour:
         inSequence: {fileID: 11400000, guid: 02106426639a345658b37807f0263d7d, type: 2}
         outSequence: {fileID: 11400000, guid: 3b83f32ac63c3440489e54c29c473fa8, type: 2}
     tweenInterval: 0.2
+--- !u!114 &114396859758733908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717423261091138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27bf37f669064a9f98f21f3fa52b3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 12
 --- !u!114 &114403201977537812
 MonoBehaviour:
   m_ObjectHideFlags: 1

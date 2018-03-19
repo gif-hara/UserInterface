@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 224613055072751084}
   - component: {fileID: 222534147749999060}
   - component: {fileID: 114395180259205232}
+  - component: {fileID: 114818064263188156}
   m_Layer: 5
-  m_Name: Panel_3_000
+  m_Name: Panel_MintLeaf_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,6 +195,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 114395180259205232}
   selectable: {fileID: 114055945695884130}
+--- !u!114 &114818064263188156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717423261091138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27bf37f669064a9f98f21f3fa52b3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorType: 4
 --- !u!222 &222438330696666554
 CanvasRenderer:
   m_ObjectHideFlags: 1

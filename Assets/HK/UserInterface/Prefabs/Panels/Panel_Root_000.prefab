@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114381645054231718}
   - component: {fileID: 114435556895462032}
   m_Layer: 5
-  m_Name: To_2_Room
+  m_Name: To_RobinsEggBlue_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 114259160277029246}
   - component: {fileID: 114091355157709888}
   m_Layer: 5
-  m_Name: To_6_Room
+  m_Name: To_BrightYarrow_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 114529813066273210}
   - component: {fileID: 114898800655450322}
   m_Layer: 5
-  m_Name: To_5_Room
+  m_Name: To_ShyMoment_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 114395180259205232}
   - component: {fileID: 114855546052788672}
   m_Layer: 5
-  m_Name: Panel_0_000
+  m_Name: Panel_Root_000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114351777256444982}
   - component: {fileID: 114067727081216698}
   m_Layer: 5
-  m_Name: To_3_Room
+  m_Name: To_MintLeaf_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 114682029385499332}
   - component: {fileID: 114733728564666392}
   m_Layer: 5
-  m_Name: To_4_Room
+  m_Name: To_FirstDate_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 114403201977537812}
   - component: {fileID: 114707610264621944}
   m_Layer: 5
-  m_Name: To_1_Room
+  m_Name: To_PinkGlamour_Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
