@@ -33,5 +33,12 @@ namespace HK.UserInterface.PanelElements
                 })
                 .AddTo(this);
         }
+        
+        #if UNITY_EDITOR
+        void Reset()
+        {
+            this.selectable = this.GetComponent<Selectable>();
+        }
+        #endif
     }
 }
