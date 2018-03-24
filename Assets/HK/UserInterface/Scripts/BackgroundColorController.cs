@@ -13,6 +13,10 @@ namespace HK.UserInterface.GameSystems
     /// </summary>
     public sealed class BackgroundColorController : MonoBehaviour
     {
+        private static BackgroundColorController instance;
+        
+        public static BackgroundColorController Instance { get { return instance; } }
+        
         [SerializeField]
         private Camera controlledCamera;
 
@@ -22,15 +26,37 @@ namespace HK.UserInterface.GameSystems
         [SerializeField]
         private Ease ease;
 
+        [SerializeField]
+        private ColorType initialColorType;
+
         private Tweener changeColor;
+
+        public ColorType CurrentColorType { get; private set; }
 
         void Awake()
         {
+            instance = this;
+            
             Assert.IsNotNull(this.controlledCamera);
             UniRxEvent.GlobalBroker.Receive<ChangeBackgroundColor>()
                 .SubscribeWithState(this, (x, _this) => _this.Change(x.ColorType))
                 .AddTo(this);
         }
+
+        void OnDestroy()
+        {
+            instance = null;
+        }
+        
+        #if UNITY_EDITOR
+        void OnValidate()
+        {
+            if (this.controlledCamera != null)
+            {
+                this.controlledCamera.backgroundColor = this.initialColorType.ToColor();
+            }
+        }
+        #endif
 
         private void Change(ColorType colorType)
         {
@@ -40,6 +66,7 @@ namespace HK.UserInterface.GameSystems
             }
             
             this.changeColor = this.controlledCamera.DOColor(colorType.ToColor(), this.duration).SetEase(this.ease);
+            this.CurrentColorType = colorType;
         }
     }
 }
